@@ -61,13 +61,6 @@ export default function Hero() {
               >
                 QUERO ME CADASTRAR
               </a>
-
-              <a
-                href="#frota"
-                className="inline-flex items-center justify-center bg-transparent hover:bg-white/10 text-white font-bold px-10 py-4 rounded text-base transition-all border-2 border-white"
-              >
-                FROTA DE MÁQUINAS
-              </a>
             </div>
           </div>
 
