@@ -24,8 +24,9 @@ export default function Cadastro() {
       cpf: formData.get('cpf'),
       cidade: formData.get('cidade'),
       telefone: formData.get('telefone'),
-      placa: formData.get('placa'),
-      email: formData.get('email')
+      placa_caminhao: formData.get('placa'),
+      email: formData.get('email'),
+      modelo_ano_caminhao: formData.get('modelo_ano_caminhao') || ''
     };
 
     try {
