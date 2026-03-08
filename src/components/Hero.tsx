@@ -4,9 +4,7 @@ export default function Hero() {
       <div className="absolute top-0 left-0 right-0 bg-[#1e3a8a] py-3 z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
           <div className="flex items-center gap-2">
-            <div className="bg-yellow-400 px-4 py-1 transform -skew-x-12">
-              <span className="text-[#1e3a8a] font-black text-xl skew-x-12 inline-block">AJOFER</span>
-            </div>
+            <img src="/logo.png" alt="Transportadora AJofer" className="h-10" />
           </div>
           <nav className="hidden md:flex gap-6 text-sm">
             <a href="#vantagens" className="hover:text-yellow-400 transition-colors">VANTAGENS</a>

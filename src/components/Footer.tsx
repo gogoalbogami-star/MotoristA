@@ -7,9 +7,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-10 mb-10">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="bg-yellow-400 px-3 py-1 transform -skew-x-12">
-                <span className="text-[#1e3a8a] font-black text-lg skew-x-12 inline-block">AJOFER</span>
-              </div>
+              <img src="/logo.png" alt="Transportadora AJofer" className="h-12" />
             </div>
             <p className="text-blue-200 leading-relaxed text-sm">
               Conectamos motoristas parceiros com as melhores oportunidades de transporte de materiais de construção.
