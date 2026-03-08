@@ -1,15 +1,15 @@
 export default function Frota() {
   const images = [
     {
-      url: 'https://images.pexels.com/photos/1115492/pexels-photo-1115492.jpeg?auto=compress&cs=tinysrgb&w=800',
+      url: 'https://i.imgur.com/MaEHTC6.png',
       alt: 'Caminhão de transporte'
     },
     {
-      url: 'https://images.pexels.com/photos/6670454/pexels-photo-6670454.jpeg?auto=compress&cs=tinysrgb&w=800',
+      url: 'https://i.imgur.com/HDI6OC0.png',
       alt: 'Frota de caminhões'
     },
     {
-      url: 'https://images.pexels.com/photos/6169668/pexels-photo-6169668.jpeg?auto=compress&cs=tinysrgb&w=800',
+      url: 'https://i.imgur.com/svpM0g4.png',
       alt: 'Parceiros de Sucesso',
       hasLabel: true
     }
