@@ -80,10 +80,6 @@ export default function Hero() {
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
                     <div className="w-1.5 h-1.5 rounded-full bg-yellow-400 mt-2"></div>
-                    <p className="text-white text-sm">Ganhe até R$ 15.000/mês trabalhando conosco</p>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <div className="w-1.5 h-1.5 rounded-full bg-yellow-400 mt-2"></div>
                     <p className="text-white text-sm">Fretes garantidos todos os dias da semana</p>
                   </div>
                   <div className="flex items-start gap-3">
