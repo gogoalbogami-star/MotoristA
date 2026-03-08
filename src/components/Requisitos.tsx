@@ -1,39 +1,37 @@
 import { CheckCircle2 } from 'lucide-react';
 
 const requisitosEsquerda = [
-  'Documentação veículo atualizada (ANTT/ RG, CNH)',
+  'Documentação veículo atualizada (ANTT / RG, CNH)',
   'ANTT e MOPP atuais',
-  'Dispor de rastreio e anti-furto',
-  'Responsabilidade para respeito'
+  'Disponibilidade para rastreio'
 ];
 
 const requisitosDireita = [
-  'CNH categoria válida (C, D ou E)',
-  'Veículo próprio em bom estado',
-  'Documentação do veículo regularizada',
-  'Maior de 21 anos'
+  'CNH categoria mínima de veículo',
+  'ANTT e MOPP atuais',
+  'Responsabilidade para respeito'
 ];
 
 export default function Requisitos() {
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-gray-50">
+    <section id="requisitos" className="py-20 bg-white">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
             Requisitos básicos
           </h2>
-          <p className="text-xl text-gray-600">
-            Confira o que é necessário para começar sua parceria conosco
+          <p className="text-lg text-gray-600">
+            Confira o que é necessário para agregar seu caminhão conosco
           </p>
         </div>
 
-        <div className="bg-gradient-to-br from-blue-900 to-blue-800 rounded-2xl p-10 sm:p-14 shadow-2xl">
+        <div className="bg-[#1e3a8a] rounded-lg p-10 sm:p-14">
           <div className="grid md:grid-cols-2 gap-8">
             <div className="space-y-4">
               {requisitosEsquerda.map((requisito, index) => (
                 <div key={index} className="flex items-start gap-3">
-                  <CheckCircle2 className="w-6 h-6 text-yellow-400 flex-shrink-0 mt-0.5" />
-                  <span className="text-white text-base">{requisito}</span>
+                  <CheckCircle2 className="w-5 h-5 text-white flex-shrink-0 mt-0.5" />
+                  <span className="text-white text-sm">{requisito}</span>
                 </div>
               ))}
             </div>
@@ -41,23 +39,17 @@ export default function Requisitos() {
             <div className="space-y-4">
               {requisitosDireita.map((requisito, index) => (
                 <div key={index} className="flex items-start gap-3">
-                  <CheckCircle2 className="w-6 h-6 text-yellow-400 flex-shrink-0 mt-0.5" />
-                  <span className="text-white text-base">{requisito}</span>
+                  <CheckCircle2 className="w-5 h-5 text-white flex-shrink-0 mt-0.5" />
+                  <span className="text-white text-sm">{requisito}</span>
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="mt-12 pt-10 border-t border-blue-700 text-center">
-            <p className="text-blue-100 text-lg mb-6 max-w-2xl mx-auto">
-              Não se preocupe! Mesmo que não tenha todos os requisitos acima, entre em contato conosco e avaliaremos sua situação
+          <div className="mt-10 pt-8 border-t border-blue-700 text-center">
+            <p className="text-white text-sm mb-6 max-w-2xl mx-auto">
+              Não se preocupe! Mesmo assim nos envie seu cadastro e entraremos em contato para esclarecer qualquer dúvida.
             </p>
-            <a
-              href="#cadastro"
-              className="inline-flex items-center gap-2 bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold px-10 py-5 rounded-lg text-lg transition-all transform hover:scale-105 shadow-xl"
-            >
-              Fazer meu cadastro agora
-            </a>
           </div>
         </div>
       </div>

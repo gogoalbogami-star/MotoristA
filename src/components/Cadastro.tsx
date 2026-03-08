@@ -1,6 +1,6 @@
 import { useState, FormEvent } from 'react';
 import { createClient } from '@supabase/supabase-js';
-import { Truck, Loader2, CheckCircle2, AlertCircle } from 'lucide-react';
+import { Loader2, CheckCircle2, AlertCircle, Send } from 'lucide-react';
 
 const supabase = createClient(
   import.meta.env.VITE_SUPABASE_URL,
@@ -21,13 +21,11 @@ export default function Cadastro() {
     const formData = new FormData(e.currentTarget);
     const dados = {
       nome_completo: formData.get('nome_completo'),
-      telefone: formData.get('telefone'),
-      email: formData.get('email'),
+      cpf: formData.get('cpf'),
       cidade: formData.get('cidade'),
-      tipo_veiculo: formData.get('tipo_veiculo'),
+      telefone: formData.get('telefone'),
       placa: formData.get('placa'),
-      categoria_cnh: formData.get('categoria_cnh'),
-      observacoes: formData.get('observacoes')
+      email: formData.get('email')
     };
 
     try {
@@ -52,14 +50,14 @@ export default function Cadastro() {
   };
 
   return (
-    <section id="cadastro" className="py-20 bg-gradient-to-b from-gray-50 to-white">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="cadastro" className="py-20 bg-gray-50">
+      <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
             Cadastre-se agora
           </h2>
-          <p className="text-xl text-gray-600">
-            Preencha o formulário e nossa equipe entrará em contato em até 24 horas
+          <p className="text-base text-gray-600">
+            Preencha o formulário e nossa equipe entrará em contato em breve
           </p>
         </div>
 
@@ -80,7 +78,7 @@ export default function Cadastro() {
           </div>
         )}
 
-        <form onSubmit={handleSubmit} className="bg-white rounded-2xl shadow-xl p-8 space-y-6">
+        <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow-lg p-8 space-y-6">
           <div>
             <label htmlFor="nome_completo" className="block text-sm font-medium text-gray-700 mb-2">
               Nome completo *
@@ -90,14 +88,14 @@ export default function Cadastro() {
               id="nome_completo"
               name="nome_completo"
               required
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent transition"
-              placeholder="Seu nome completo"
+              className="w-full px-4 py-3 border border-gray-300 rounded focus:ring-2 focus:ring-[#1e3a8a] focus:border-transparent transition text-sm"
+              placeholder=""
             />
           </div>
 
           <div className="grid sm:grid-cols-2 gap-6">
             <div>
-              <label htmlFor="telefone" className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="cpf" className="block text-sm font-medium text-gray-700 mb-2">
                 CPF *
               </label>
               <input
@@ -105,8 +103,8 @@ export default function Cadastro() {
                 id="cpf"
                 name="cpf"
                 required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent transition"
-                placeholder="000.000.000-00"
+                className="w-full px-4 py-3 border border-gray-300 rounded focus:ring-2 focus:ring-[#1e3a8a] focus:border-transparent transition text-sm"
+                placeholder=""
               />
             </div>
 
@@ -119,8 +117,8 @@ export default function Cadastro() {
                 id="cidade"
                 name="cidade"
                 required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent transition"
-                placeholder="Sua cidade"
+                className="w-full px-4 py-3 border border-gray-300 rounded focus:ring-2 focus:ring-[#1e3a8a] focus:border-transparent transition text-sm"
+                placeholder=""
               />
             </div>
           </div>
@@ -135,8 +133,8 @@ export default function Cadastro() {
                 id="telefone"
                 name="telefone"
                 required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent transition"
-                placeholder="(11) 99999-9999"
+                className="w-full px-4 py-3 border border-gray-300 rounded focus:ring-2 focus:ring-[#1e3a8a] focus:border-transparent transition text-sm"
+                placeholder=""
               />
             </div>
 
@@ -149,8 +147,8 @@ export default function Cadastro() {
                 id="placa"
                 name="placa"
                 required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent transition"
-                placeholder="ABC-1234"
+                className="w-full px-4 py-3 border border-gray-300 rounded focus:ring-2 focus:ring-[#1e3a8a] focus:border-transparent transition text-sm"
+                placeholder=""
               />
             </div>
           </div>
@@ -164,28 +162,15 @@ export default function Cadastro() {
               id="email"
               name="email"
               required
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-900 focus:border-transparent transition"
-              placeholder="seu@email.com"
+              className="w-full px-4 py-3 border border-gray-300 rounded focus:ring-2 focus:ring-[#1e3a8a] focus:border-transparent transition text-sm"
+              placeholder=""
             />
-          </div>
-
-          <div>
-            <label htmlFor="observacoes" className="block text-sm font-semibold text-gray-700 mb-2">
-              Observações
-            </label>
-            <textarea
-              id="observacoes"
-              name="observacoes"
-              rows={4}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition resize-none"
-              placeholder="Conte-nos mais sobre você e sua experiência..."
-            ></textarea>
           </div>
 
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-blue-900 hover:bg-blue-800 text-white font-bold py-4 px-6 rounded-lg text-base transition-all transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none shadow-lg flex items-center justify-center gap-3"
+            className="w-full bg-[#1e3a8a] hover:bg-[#1e40af] text-white font-bold py-4 px-6 rounded text-sm transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg flex items-center justify-center gap-3"
           >
             {loading ? (
               <>
@@ -194,13 +179,13 @@ export default function Cadastro() {
               </>
             ) : (
               <>
-                <CheckCircle2 className="w-5 h-5" />
+                <Send className="w-5 h-5" />
                 Enviar cadastro
               </>
             )}
           </button>
 
-          <p className="text-sm text-gray-500 text-center">
+          <p className="text-xs text-gray-500 text-center">
             * Campos obrigatórios
           </p>
         </form>

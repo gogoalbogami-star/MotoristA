@@ -1,13 +1,13 @@
-import { DollarSign, Calendar, Shield, Users, TrendingUp, Award } from 'lucide-react';
+import { TrendingUp, Clock, Shield, Users, FileCheck, Award } from 'lucide-react';
 
 const vantagens = [
   {
-    icon: DollarSign,
+    icon: TrendingUp,
     title: 'Fretes Constantes',
     description: 'Trabalho garantido todos os dias com cargas programadas para você não ficar parado'
   },
   {
-    icon: Calendar,
+    icon: Clock,
     title: 'Pagamento Transparente',
     description: 'Valores justos e pagamento sempre em dia sem atrasos ou complicações'
   },
@@ -17,14 +17,14 @@ const vantagens = [
     description: 'Equipe completa pronta para te ajudar em qualquer situação durante suas viagens'
   },
   {
-    icon: TrendingUp,
-    title: 'Melhore Renda',
-    description: 'Receba benefícios extras e aumente seus ganhos trabalhando com rotas otimizadas'
+    icon: Users,
+    title: 'Melhores Rotas',
+    description: 'Rotas estrategicamente planejadas para você ter mais eficiência no trabalho'
   },
   {
-    icon: Users,
+    icon: FileCheck,
     title: 'Parceria de Confiança',
-    description: 'Faça parte de uma comunidade de motoristas parceiros com benefícios exclusivos'
+    description: 'Procedimentos transparentes e honestos em todas as operações realizadas'
   },
   {
     icon: Award,
@@ -35,30 +35,30 @@ const vantagens = [
 
 export default function Vantagens() {
   return (
-    <section className="py-20 bg-white">
+    <section id="vantagens" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
             Por que agregar com a AJofer
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Seja parceiro da maior e mais confiável agregadora de caminhões e comece a ganhar mais com estabilidade
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            Seja parceiro da maior e mais confiável agregadora de caminhões e comece a ganhar mais com estabilidade no transporte de cargas
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {vantagens.map((vantagem, index) => (
             <div
               key={index}
-              className="bg-gradient-to-br from-gray-50 to-blue-50 rounded-xl p-8 hover:shadow-2xl transition-all border border-gray-200 hover:border-blue-300 group"
+              className="bg-white rounded-lg p-6 hover:shadow-xl transition-all border border-gray-200 group"
             >
-              <div className="bg-gradient-to-br from-blue-900 to-blue-800 w-16 h-16 rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform shadow-lg">
-                <vantagem.icon className="w-8 h-8 text-yellow-400" />
+              <div className="bg-gradient-to-br from-emerald-400 to-teal-400 w-14 h-14 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <vantagem.icon className="w-7 h-7 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
+              <h3 className="text-lg font-bold text-gray-900 mb-2">
                 {vantagem.title}
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-600 text-sm leading-relaxed">
                 {vantagem.description}
               </p>
             </div>

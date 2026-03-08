@@ -1,42 +1,42 @@
-import { FileText, CheckCircle, Truck, TrendingUp } from 'lucide-react';
+import { FileText, Search, FileCheck, Rocket } from 'lucide-react';
 
 const passos = [
   {
     icon: FileText,
     numero: '1',
-    title: 'Faça seu cadastro',
-    description: 'Preencha o formulário com seus dados e informações do veículo'
+    title: 'Preencha o cadastro',
+    description: 'Complete o formulário online com seus dados pessoais e informações do caminhão'
   },
   {
-    icon: CheckCircle,
+    icon: Search,
     numero: '2',
-    title: 'Análise e aprovação',
-    description: 'Nossa equipe analisa sua documentação em até 24 horas'
+    title: 'Análise da documentação',
+    description: 'Nossa equipe analisa toda documentação enviada em até 24 horas úteis'
   },
   {
-    icon: Truck,
+    icon: FileCheck,
     numero: '3',
-    title: 'Comece a trabalhar',
-    description: 'Receba suas primeiras cargas e comece a ganhar'
+    title: 'Cadastro e alinhamento',
+    description: 'Após aprovação finalizamos seu cadastro e alinhamos todos os procedimentos'
   },
   {
-    icon: TrendingUp,
+    icon: Rocket,
     numero: '4',
-    title: 'Cresça conosco',
-    description: 'Quanto mais você trabalha, mais você ganha e cresce'
+    title: 'Inicie as parceria',
+    description: 'Comece hoje mesmo a trabalhar com a gente e ganhe seu dinheiro'
   }
 ];
 
 export default function ComoFunciona() {
   return (
-    <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+    <section id="como-funciona" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-            Como funciona?
+            Como funciona
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Processo simples e rápido para você começar a trabalhar
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Processo simples e rápido para começar a agregar seu caminhão
           </p>
         </div>
 
@@ -45,25 +45,21 @@ export default function ComoFunciona() {
             <div key={index} className="relative">
               <div className="text-center">
                 <div className="relative inline-block mb-6">
-                  <div className="bg-blue-900 w-20 h-20 rounded-full flex items-center justify-center mx-auto shadow-lg">
-                    <passo.icon className="w-10 h-10 text-emerald-400" />
+                  <div className="bg-gradient-to-br from-teal-400 to-emerald-400 w-20 h-20 rounded-full flex items-center justify-center mx-auto shadow-lg">
+                    <passo.icon className="w-9 h-9 text-white" />
                   </div>
-                  <div className="absolute -top-2 -right-2 bg-emerald-500 w-8 h-8 rounded-full flex items-center justify-center text-white font-bold shadow-md">
+                  <div className="absolute -top-2 -right-2 bg-[#1e3a8a] w-8 h-8 rounded-full flex items-center justify-center text-white font-bold text-sm shadow-md">
                     {passo.numero}
                   </div>
                 </div>
 
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                <h3 className="text-lg font-bold text-gray-900 mb-2">
                   {passo.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-gray-600 text-sm leading-relaxed">
                   {passo.description}
                 </p>
               </div>
-
-              {index < passos.length - 1 && (
-                <div className="hidden lg:block absolute top-10 left-[60%] w-[80%] h-0.5 bg-gradient-to-r from-blue-900 to-emerald-400"></div>
-              )}
             </div>
           ))}
         </div>
