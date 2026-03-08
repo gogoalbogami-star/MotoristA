@@ -1,25 +1,35 @@
-import { DollarSign, Calendar, Shield, Users } from 'lucide-react';
+import { DollarSign, Calendar, Shield, Users, TrendingUp, Award } from 'lucide-react';
 
 const vantagens = [
   {
     icon: DollarSign,
-    title: 'Ganhe Mais',
-    description: 'Fretes com valores competitivos e pagamentos garantidos. Aumente sua renda mensal!'
+    title: 'Fretes Constantes',
+    description: 'Trabalho garantido todos os dias com cargas programadas para você não ficar parado'
   },
   {
     icon: Calendar,
-    title: 'Fretes Constantes',
-    description: 'Trabalho garantido todos os dias. Não fique parado esperando carga!'
+    title: 'Pagamento Transparente',
+    description: 'Valores justos e pagamento sempre em dia sem atrasos ou complicações'
   },
   {
     icon: Shield,
-    title: 'Segurança',
-    description: 'Cargas seguras e rotas planejadas. Trabalhe com tranquilidade!'
+    title: 'Suporte Dedicado',
+    description: 'Equipe completa pronta para te ajudar em qualquer situação durante suas viagens'
+  },
+  {
+    icon: TrendingUp,
+    title: 'Melhore Renda',
+    description: 'Receba benefícios extras e aumente seus ganhos trabalhando com rotas otimizadas'
   },
   {
     icon: Users,
-    title: 'Suporte Total',
-    description: 'Equipe sempre disponível para ajudar. Você não está sozinho!'
+    title: 'Parceria de Confiança',
+    description: 'Faça parte de uma comunidade de motoristas parceiros com benefícios exclusivos'
+  },
+  {
+    icon: Award,
+    title: 'Suporte e Respeito',
+    description: 'Trabalhe com uma empresa que valoriza e respeita seus motoristas parceiros'
   }
 ];
 
@@ -29,21 +39,21 @@ export default function Vantagens() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-            Por que se tornar nosso parceiro?
+            Por que agregar com a AJofer
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Veja as vantagens de trabalhar conosco
+            Seja parceiro da maior e mais confiável agregadora de caminhões e comece a ganhar mais com estabilidade
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {vantagens.map((vantagem, index) => (
             <div
               key={index}
-              className="bg-gray-50 rounded-xl p-6 hover:shadow-xl transition-shadow border border-gray-100"
+              className="bg-gradient-to-br from-gray-50 to-blue-50 rounded-xl p-8 hover:shadow-2xl transition-all border border-gray-200 hover:border-blue-300 group"
             >
-              <div className="bg-blue-900 w-14 h-14 rounded-lg flex items-center justify-center mb-4">
-                <vantagem.icon className="w-7 h-7 text-emerald-400" />
+              <div className="bg-gradient-to-br from-blue-900 to-blue-800 w-16 h-16 rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform shadow-lg">
+                <vantagem.icon className="w-8 h-8 text-yellow-400" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">
                 {vantagem.title}
