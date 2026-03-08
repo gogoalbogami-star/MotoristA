@@ -47,7 +47,7 @@ export default function Footer() {
             <h3 className="text-white font-bold text-base mb-4">Contato</h3>
             <div className="space-y-3 text-blue-200 text-sm">
               <div>
-                <p>(11) 3935-9993</p>
+                <p>(11) 96670-2781</p>
               </div>
               <div>
                 <p>Segunda a Sexta: 8h às 18h</p>
