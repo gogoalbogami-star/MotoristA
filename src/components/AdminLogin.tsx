@@ -25,17 +25,21 @@ export default function AdminLogin({ onLoginSuccess }: AdminLoginProps) {
     const password = formData.get('password') as string;
 
     try {
-      const { error: signInError } = await supabase.auth.signInWithPassword({
+      const { data, error: signInError } = await supabase.auth.signInWithPassword({
         email,
         password,
       });
 
-      if (signInError) throw signInError;
+      if (signInError) {
+        console.error('Erro de autenticação:', signInError);
+        throw signInError;
+      }
 
+      console.log('Login bem-sucedido:', data);
       onLoginSuccess();
     } catch (err: any) {
-      setError('Email ou senha incorretos');
-      console.error('Erro:', err);
+      console.error('Erro completo:', err);
+      setError(`Email ou senha incorretos. Erro: ${err.message || 'Desconhecido'}`);
     } finally {
       setLoading(false);
     }
