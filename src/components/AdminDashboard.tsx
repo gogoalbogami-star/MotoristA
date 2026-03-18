@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { createClient } from '@supabase/supabase-js';
-import { LogOut, Users, Mail, Phone, Truck, MapPin, Calendar, Filter, Loader2, User } from 'lucide-react';
+import { LogOut, Users, Mail, Phone, Truck, MapPin, Calendar, Filter, Loader2, User, Award } from 'lucide-react';
+import ApprovalCertificate from './ApprovalCertificate';
 
 const supabase = createClient(
   import.meta.env.VITE_SUPABASE_URL,
@@ -29,6 +30,7 @@ export default function AdminDashboard({ onLogout }: AdminDashboardProps) {
   const [cadastros, setCadastros] = useState<Cadastro[]>([]);
   const [loading, setLoading] = useState(true);
   const [filtroStatus, setFiltroStatus] = useState<string>('todos');
+  const [certificadoAberto, setCertificadoAberto] = useState<Cadastro | null>(null);
 
   useEffect(() => {
     loadCadastros();
@@ -260,15 +262,26 @@ export default function AdminDashboard({ onLogout }: AdminDashboardProps) {
                         </span>
                       </td>
                       <td className="px-6 py-4">
-                        <select
-                          value={cadastro.status}
-                          onChange={(e) => updateStatus(cadastro.id, e.target.value)}
-                          className="text-sm px-3 py-1 border border-gray-300 rounded focus:ring-2 focus:ring-[#1e3a8a] focus:border-transparent"
-                        >
-                          <option value="pendente">Pendente</option>
-                          <option value="aprovado">Aprovar</option>
-                          <option value="rejeitado">Rejeitar</option>
-                        </select>
+                        <div className="flex items-center gap-2">
+                          <select
+                            value={cadastro.status}
+                            onChange={(e) => updateStatus(cadastro.id, e.target.value)}
+                            className="text-sm px-3 py-1 border border-gray-300 rounded focus:ring-2 focus:ring-[#1e3a8a] focus:border-transparent"
+                          >
+                            <option value="pendente">Pendente</option>
+                            <option value="aprovado">Aprovar</option>
+                            <option value="rejeitado">Rejeitar</option>
+                          </select>
+                          {cadastro.status === 'aprovado' && (
+                            <button
+                              onClick={() => setCertificadoAberto(cadastro)}
+                              className="p-2 bg-green-100 hover:bg-green-200 text-green-700 rounded transition"
+                              title="Ver certificado de aprovação"
+                            >
+                              <Award className="w-5 h-5" />
+                            </button>
+                          )}
+                        </div>
                       </td>
                     </tr>
                   ))}
@@ -278,6 +291,14 @@ export default function AdminDashboard({ onLogout }: AdminDashboardProps) {
           )}
         </div>
       </div>
+
+      {certificadoAberto && (
+        <ApprovalCertificate
+          nomeCompleto={certificadoAberto.nome_completo}
+          cpf={certificadoAberto.cpf}
+          onClose={() => setCertificadoAberto(null)}
+        />
+      )}
     </div>
   );
 }
