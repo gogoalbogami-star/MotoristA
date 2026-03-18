@@ -14,7 +14,8 @@ interface Cadastro {
   cidade: string;
   telefone: string;
   placa_caminhao: string;
-  modelo_ano_caminhao: string;
+  modelo_veiculo: string;
+  ano_veiculo: string;
   email: string;
   status: string;
   created_at: string;
@@ -231,9 +232,10 @@ export default function AdminDashboard({ onLogout }: AdminDashboardProps) {
                           <Truck className="w-4 h-4 text-gray-400" />
                           {cadastro.placa_caminhao}
                         </div>
-                        {cadastro.modelo_ano_caminhao && (
+                        {cadastro.modelo_veiculo && (
                           <div className="text-sm text-gray-500 mt-1">
-                            {cadastro.modelo_ano_caminhao}
+                            {cadastro.modelo_veiculo}
+                            {cadastro.ano_veiculo && ` - ${cadastro.ano_veiculo}`}
                           </div>
                         )}
                       </td>

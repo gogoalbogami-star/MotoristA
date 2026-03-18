@@ -26,7 +26,8 @@ export default function Cadastro() {
       telefone: formData.get('telefone'),
       placa_caminhao: formData.get('placa'),
       email: formData.get('email'),
-      modelo_ano_caminhao: formData.get('modelo_ano_caminhao') || ''
+      modelo_veiculo: formData.get('modelo_veiculo') || '',
+      ano_veiculo: formData.get('ano_veiculo') || ''
     };
 
     try {
@@ -150,6 +151,37 @@ export default function Cadastro() {
                 required
                 className="w-full px-4 py-3 border border-gray-300 rounded focus:ring-2 focus:ring-[#1e3a8a] focus:border-transparent transition text-sm"
                 placeholder=""
+              />
+            </div>
+          </div>
+
+          <div className="grid sm:grid-cols-2 gap-6">
+            <div>
+              <label htmlFor="modelo_veiculo" className="block text-sm font-medium text-gray-700 mb-2">
+                Modelo do veículo *
+              </label>
+              <input
+                type="text"
+                id="modelo_veiculo"
+                name="modelo_veiculo"
+                required
+                className="w-full px-4 py-3 border border-gray-300 rounded focus:ring-2 focus:ring-[#1e3a8a] focus:border-transparent transition text-sm"
+                placeholder="Ex: Scania R450"
+              />
+            </div>
+
+            <div>
+              <label htmlFor="ano_veiculo" className="block text-sm font-medium text-gray-700 mb-2">
+                Ano do veículo *
+              </label>
+              <input
+                type="text"
+                id="ano_veiculo"
+                name="ano_veiculo"
+                required
+                maxLength={4}
+                className="w-full px-4 py-3 border border-gray-300 rounded focus:ring-2 focus:ring-[#1e3a8a] focus:border-transparent transition text-sm"
+                placeholder="Ex: 2020"
               />
             </div>
           </div>
